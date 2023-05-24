@@ -6,6 +6,7 @@ function About() {
       <div>Description</div>
       <div>Short bio</div>
       <div>Github Link</div>
+      <div>Github Links</div>
     </div>
   );
 }
