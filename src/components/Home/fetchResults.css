@@ -1,0 +1,22 @@
+.videoList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 80%;
+  margin: 0px auto;
+}
+
+.video-card {
+  display: grid;
+}
+
+img {
+  width: 100%;
+  justify-self: center;
+}
+.video-title {
+  justify-self: center;
+}
+.searchMessage {
+  text-align: center;
+}

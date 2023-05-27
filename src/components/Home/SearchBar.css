@@ -1,0 +1,17 @@
+.searchArea {
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  width: 70%;
+  height: 5vh;
+  margin: 80px auto;
+}
+.searchArea input {
+  border: solid 1px black;
+  border-radius: 3px;
+}
+.searchArea button {
+  color: white;
+  border: 1px solid red;
+  border-radius: 3px;
+  background-color: red;
+}
