@@ -1,7 +1,7 @@
 import React from "react";
 import Cards from "../Cards/Cards";
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import fetchApi from "../api/Api";
 import "./SearchBar.css";
 import "./fetchResults.css";
@@ -18,16 +18,20 @@ function Home() {
     }
   }, []);
 
+  console.log(searchquery);
+
   async function fetchVideos() {
-    try {
-      let result = await fetchApi({
-        method: "get",
-        resource: `${searchquery}`,
-      });
-      console.log(result.data.items);
-      setSearchResultsArray(result.data.items);
-    } catch (error) {
-      console.log(error);
+    if (searchquery !== "") {
+      try {
+        let result = await fetchApi({
+          method: "get",
+          resource: `${searchquery}`,
+        });
+        console.log(result.data.items);
+        setSearchResultsArray(result.data.items);
+      } catch (error) {
+        console.log(error);
+      }
     }
   }
 
@@ -40,6 +44,9 @@ function Home() {
   function invalidSearch() {
     if (searchquery === "") {
       alert("Search can't be empty");
+      setMessage(false);
+    } else {
+      setMessage(true);
     }
   }
 
@@ -48,7 +55,7 @@ function Home() {
     invalidSearch();
     fetchVideos();
     setSearchQuery("");
-    setMessage(!message);
+    // setMessage(!message);
   }
   return (
     <>
