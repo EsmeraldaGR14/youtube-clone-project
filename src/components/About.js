@@ -3,6 +3,7 @@ import React from "react";
 function About() {
   return (
     <div>
+
       <div>
         Description: Welcome to our YouTube Clone Project! Our platform lets you
         search and find videos easily. You'll get accurate results with helpful
@@ -55,6 +56,8 @@ function About() {
         </a>
         for Karma
       </div>
+
+
     </div>
   );
 }
