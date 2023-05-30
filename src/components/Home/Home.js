@@ -15,7 +15,27 @@ function Home() {
     if (searchquery) {
       fetchVideos();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  // useEffect(() => {
+  //   const fetchVideos = async () => {
+  //     if (searchquery !== "") {
+  //       try {
+  //         let result = await fetchApi({
+  //           method: "get",
+  //           resource: `${searchquery}`,
+  //         });
+  //         //console.log(result.data.items);
+  //         setSearchResultsArray(result.data.items);
+  //       } catch (error) {
+  //         console.log(error);
+  //       }
+  //     }
+  //   };
+
+  //   fetchVideos();
+  // }, [fetchVideos, searchquery]);
 
   async function fetchVideos() {
     if (searchquery !== "") {
