@@ -11,6 +11,7 @@ function SingleVideo() {
 
   useEffect(() => {
     fetchSingleVideo();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [videoId]);
 
   async function fetchSingleVideo() {
@@ -32,6 +33,7 @@ function SingleVideo() {
         src={`https://www.youtube.com/embed/${videoId}`}
         width="800"
         height="500"
+        title="video-play"
       >
         {" "}
       </iframe>
