@@ -1,7 +1,7 @@
 import React from "react";
 import Cards from "../Cards/Cards";
 import { useState, useEffect } from "react";
-// import { useNavigate } from "react-router-dom";
+
 import fetchApi from "../api/Api";
 import "./SearchBar.css";
 import "./fetchResults.css";
@@ -10,7 +10,6 @@ function Home() {
   const [searchquery, setSearchQuery] = useState("");
   const [searchResultsArray, setSearchResultsArray] = useState([]);
   const [message, setMessage] = useState(false);
-  //const navigate = useNavigate();
 
   useEffect(() => {
     if (searchquery) {
