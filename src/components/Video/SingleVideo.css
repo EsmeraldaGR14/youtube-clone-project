@@ -1,0 +1,22 @@
+.play_video_section {
+  display: grid;
+}
+iframe {
+  margin-top: 3rem;
+  justify-self: center;
+}
+.play-video-card {
+  margin: 40px 15px;
+}
+.details {
+  border: 1px solid lightgray;
+  border-radius: 3px;
+  background: lightgray;
+}
+.details h5,
+.details p {
+  padding: 5px 20px;
+}
+a {
+  font-weight: bold;
+}

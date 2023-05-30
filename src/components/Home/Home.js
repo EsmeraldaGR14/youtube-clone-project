@@ -18,8 +18,6 @@ function Home() {
     }
   }, []);
 
-  console.log(searchquery);
-
   async function fetchVideos() {
     if (searchquery !== "") {
       try {
@@ -27,7 +25,7 @@ function Home() {
           method: "get",
           resource: `${searchquery}`,
         });
-        console.log(result.data.items);
+        //console.log(result.data.items);
         setSearchResultsArray(result.data.items);
       } catch (error) {
         console.log(error);
@@ -38,7 +36,6 @@ function Home() {
   function handleText(event) {
     const userInput = event.target.value;
     setSearchQuery(userInput);
-    console.log(searchquery);
   }
 
   function invalidSearch() {
