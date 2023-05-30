@@ -1,0 +1,24 @@
+.container {
+  margin: 20px;
+}
+
+.description,
+.bio,
+.Esmeralda-bio,
+.Karma-bio,
+.github-links,
+.esme-github-link,
+.karma-github-link {
+  margin-bottom: 10px;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: white;
+  background-color: red;
+  border-radius: 3px;
+  padding: 4px;
+}
