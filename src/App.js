@@ -4,12 +4,11 @@ import NavBar from "./components/navigation/NavBar";
 
 import Home from "./components/Home/Home";
 
-import About from "./components/About";
+import About from "./components/About/About";
 import SingleVideo from "./components/Video/SingleVideo";
 
 function App() {
   return (
-
     <Router>
       <NavBar />
 
@@ -19,7 +18,6 @@ function App() {
         <Route path="/videos/:videoId" element={<SingleVideo />} />
       </Routes>
     </Router>
-
   );
 }
 

@@ -1,10 +1,6 @@
 import React from "react";
 import Cards from "../Cards/Cards";
 import { useState, useEffect } from "react";
-<<<<<<< HEAD
-=======
-
->>>>>>> 51f1f20905ff576311e4f28341836f5091e3b157
 import fetchApi from "../api/Api";
 import "./SearchBar.css";
 import "./fetchResults.css";
@@ -15,17 +11,10 @@ function Home() {
   const [message, setMessage] = useState(false);
 
   useEffect(() => {
-<<<<<<< HEAD
-    fetchVideos();
-    // if (searchquery) {
-    //   fetchVideos();
-    // }
-=======
     if (searchquery) {
       fetchVideos();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
->>>>>>> 51f1f20905ff576311e4f28341836f5091e3b157
   }, []);
 
   async function fetchVideos() {
