@@ -1,11 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./Card.css";
 function Card({ searchResultsArray }) {
   return (
     <>
       {searchResultsArray.map((item) => {
         return (
-          <Link to={`/videos/${item.id.videoId}`} key={item.id.videoId}>
+          <Link
+            className="link"
+            to={`/videos/${item.id.videoId}`}
+            key={item.id.videoId}
+          >
             <div className="video-card">
               <img src={item.snippet.thumbnails.high.url} alt="" />
 

@@ -16,7 +16,8 @@ a {
   text-decoration: none;
 }
 
-a:hover {
+.esme-github-link a:hover,
+.karma-github-link a:hover {
   color: white;
   background-color: red;
   border-radius: 3px;
