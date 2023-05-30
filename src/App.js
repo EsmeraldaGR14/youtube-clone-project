@@ -5,6 +5,7 @@ import NavBar from "./components/navigation/NavBar";
 import Home from "./components/Home/Home";
 
 import About from "./components/About";
+import SingleVideo from "./components/Video/SingleVideo";
 
 function App() {
   return (
@@ -13,8 +14,9 @@ function App() {
       <NavBar />
 
       <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/about" element={<About />}></Route>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/videos/:videoId" element={<SingleVideo />} />
       </Routes>
     </Router>
 

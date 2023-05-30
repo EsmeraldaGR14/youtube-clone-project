@@ -5,7 +5,7 @@ function Card({ searchResultsArray }) {
     <>
       {searchResultsArray.map((item) => {
         return (
-          <Link key={item.id.videoId}>
+          <Link to={`/videos/${item.id.videoId}`} key={item.id.videoId}>
             <div className="video-card">
               <img src={item.snippet.thumbnails.high.url} alt="" />
 
