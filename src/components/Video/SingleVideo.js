@@ -11,7 +11,7 @@ function SingleVideo() {
 
   useEffect(() => {
     fetchSingleVideo();
-  }, []);
+  }, [videoId]);
 
   async function fetchSingleVideo() {
     try {

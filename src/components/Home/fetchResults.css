@@ -20,3 +20,19 @@ img {
 .searchMessage {
   text-align: center;
 }
+
+@media ((max-width: 700px)) {
+  .videoList {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media ((min-width: 701px) and (max-width:1000px)) {
+  .videoList {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1001px) {
+  .videoList {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

@@ -1,6 +1,6 @@
 import React from "react";
 import Cards from "../Cards/Cards";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import fetchApi from "../api/Api";
 import "./SearchBar.css";
 import "./fetchResults.css";
@@ -10,12 +10,7 @@ function Home() {
   const [searchResultsArray, setSearchResultsArray] = useState([]);
   const [message, setMessage] = useState(false);
 
-  useEffect(() => {
-    fetchVideos();
-  }, []);
-
   async function fetchVideos() {
-    //if (searchquery !== "") {
     try {
       let result = await fetchApi({
         method: "get",
@@ -26,7 +21,6 @@ function Home() {
     } catch (error) {
       console.log(error);
     }
-    //}
   }
 
   function handleText(event) {
