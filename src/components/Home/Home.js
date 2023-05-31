@@ -1,5 +1,6 @@
 import React from "react";
 import Cards from "../Cards/Cards";
+import Modal from "../Modal/Modal";
 import { useState, useEffect } from "react";
 import fetchApi from "../api/Api";
 import "./SearchBar.css";
@@ -7,11 +8,17 @@ import "./fetchResults.css";
 
 function Home() {
   const [searchquery, setSearchQuery] = useState("");
+  const [status, setStatus] = useState(false);
   const [searchResultsArray, setSearchResultsArray] = useState([]);
   const [message, setMessage] = useState(false);
 
   useEffect(() => {
-    fetchVideos();
+
+    if (searchquery) {
+      fetchVideos();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+
   }, []);
 
   async function fetchVideos() {
@@ -22,11 +29,30 @@ function Home() {
         resource: `${searchquery}`,
       });
 
-      setSearchResultsArray(result.data.items);
+
+        if (result.status === 200) {
+          setStatus(false); //false
+        } else {
+          setStatus(true);
+          console.log(result);
+          // alert(" 404: TRY AGAIN! API DOES NOT WORK");
+        }
+
+        setSearchResultsArray(result.data.items);
+        console.log(result);
+      } catch (error) {
+        console.log(error);
+      }
+
     } catch (error) {
       console.log(error);
+
     }
     //}
+  }
+
+  function toggleModal() {
+    setStatus(false);
   }
 
   function handleText(event) {
@@ -70,6 +96,9 @@ function Home() {
           No search Results Yet!, Please submit a search above!
         </h5>
       )}
+      {/* {status &&  */}
+      <Modal status={status} toggleModal={toggleModal} />
+      {/* } */}
     </>
   );
 }
