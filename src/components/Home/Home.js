@@ -13,19 +13,22 @@ function Home() {
   const [message, setMessage] = useState(false);
 
   useEffect(() => {
+
     if (searchquery) {
       fetchVideos();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
+
   }, []);
 
   async function fetchVideos() {
-    if (searchquery !== "") {
-      try {
-        let result = await fetchApi({
-          method: "get",
-          resource: `${searchquery}`,
-        });
+    //if (searchquery !== "") {
+    try {
+      let result = await fetchApi({
+        method: "get",
+        resource: `${searchquery}`,
+      });
+
 
         if (result.status === 200) {
           setStatus(false); //false
@@ -40,7 +43,12 @@ function Home() {
       } catch (error) {
         console.log(error);
       }
+
+    } catch (error) {
+      console.log(error);
+
     }
+    //}
   }
 
   function toggleModal() {

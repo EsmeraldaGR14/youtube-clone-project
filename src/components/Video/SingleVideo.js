@@ -11,8 +11,12 @@ function SingleVideo() {
 
   useEffect(() => {
     fetchSingleVideo();
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [videoId]);
+
+
+  }, []);
+
 
   async function fetchSingleVideo() {
     try {
