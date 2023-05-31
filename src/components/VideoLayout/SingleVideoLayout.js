@@ -17,10 +17,10 @@ function SingleVideoLayout({ playVideo }) {
                   {showMore
                     ? item.snippet.description
                     : item.snippet.description.slice(0, 300)}
-                  {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                  <a href="#" onClick={() => setshowMore(!showMore)}>
-                    {showMore ? " Show less" : "...Show more"}
-                  </a>
+
+                  <button onClick={() => setshowMore(!showMore)}>
+                    {showMore ? "\u00A0Show less" : "...Show more"}
+                  </button>
                 </p>
               </div>
             </div>

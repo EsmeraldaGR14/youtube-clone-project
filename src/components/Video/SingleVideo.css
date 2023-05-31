@@ -17,6 +17,27 @@ iframe {
 .details p {
   padding: 5px 20px;
 }
-a {
+
+button {
+  display: inline-block;
+  padding: 0;
+  background: none;
+  border: none;
   font-weight: bold;
+  cursor: pointer;
+}
+@media ((max-width: 700px)) {
+  iframe {
+    width: 55%;
+    height: 30vh;
+  }
+  .nav_bar {
+    margin: 15px 40px;
+  }
+}
+@media ((min-width: 701px) and (max-width:1000px)) {
+  iframe {
+    width: 70%;
+    height: 50vh;
+  }
 }
