@@ -13,12 +13,10 @@ function Home() {
   const [message, setMessage] = useState(false);
 
   useEffect(() => {
-
     if (searchquery) {
       fetchVideos();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-
   }, []);
 
   async function fetchVideos() {
@@ -29,26 +27,19 @@ function Home() {
         resource: `${searchquery}`,
       });
 
-
-        if (result.status === 200) {
-          setStatus(false); //false
-        } else {
-          setStatus(true);
-          console.log(result);
-          // alert(" 404: TRY AGAIN! API DOES NOT WORK");
-        }
-
-        setSearchResultsArray(result.data.items);
+      if (result.status === 200) {
+        setStatus(false); //false
+      } else {
+        setStatus(true);
         console.log(result);
-      } catch (error) {
-        console.log(error);
+        // alert(" 404: TRY AGAIN! API DOES NOT WORK");
       }
 
+      setSearchResultsArray(result.data.items);
+      console.log(result);
     } catch (error) {
       console.log(error);
-
     }
-    //}
   }
 
   function toggleModal() {
