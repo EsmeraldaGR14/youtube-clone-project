@@ -1,9 +1,7 @@
 import React from "react";
 import Cards from "../Cards/Cards";
-
 import Modal from "../Modal/Modal";
 import { useState, useEffect } from "react";
-
 import fetchApi from "../api/Api";
 import "./SearchBar.css";
 import "./fetchResults.css";
@@ -14,14 +12,12 @@ function Home() {
   const [searchResultsArray, setSearchResultsArray] = useState([]);
   const [message, setMessage] = useState(false);
 
-
   useEffect(() => {
     if (searchquery) {
       fetchVideos();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
 
   async function fetchVideos() {
     try {
@@ -47,7 +43,6 @@ function Home() {
 
   function toggleModal() {
     setStatus(false);
-
   }
 
   function handleText(event) {
@@ -69,7 +64,6 @@ function Home() {
     invalidSearch();
     fetchVideos();
     setSearchQuery("");
-    // setMessage(!message);
   }
   return (
     <>
