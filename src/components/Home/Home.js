@@ -8,9 +8,18 @@ import "./fetchResults.css";
 
 function Home() {
   const [searchquery, setSearchQuery] = useState("");
+  // searchquery is what is put in the search bar
   const [status, setStatus] = useState(false);
+  // status is for the status of the api
   const [searchResultsArray, setSearchResultsArray] = useState([]);
+  // searchResultsArray are all of the details of each youtube video put in an array so that we can iterate through it
   const [message, setMessage] = useState(false);
+  // message is being used to check whether or not it requires a "no search yet" message
+
+  /**
+   * Executes a side effect to fetch videos when the search query changes or when the component mounts.
+   * If the search query is not empty, it calls the fetchVideos() function to perform the API request.
+   */
 
   useEffect(() => {
     if (searchquery) {
@@ -19,6 +28,11 @@ function Home() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+
+  /**
+   * Fetches videos from the API based on the search query and updates the state variables.
+   */
+
   async function fetchVideos() {
     try {
       let result = await fetchApi({
@@ -26,21 +40,24 @@ function Home() {
         resource: `${searchquery}`,
       });
 
-      if (result.status === 200) {
-        setStatus(false); //false
-      } else {
-        setStatus(true);
-        console.log(result);
-        // alert(" 404: TRY AGAIN! API DOES NOT WORK");
+      if (searchquery.length !== 0) {
+        if (result.status === 200) {
+          setStatus(false);
+        } else {
+          setStatus(true);
+        }
       }
 
       setSearchResultsArray(result.data.items);
-      console.log(result);
+      console.log(result.data.items);
     } catch (error) {
       console.log(error);
     }
   }
 
+  /**
+   * Toggles the status state variable to close the modal.
+   */
   function toggleModal() {
     setStatus(false);
   }
@@ -86,7 +103,7 @@ function Home() {
         </h5>
       )}
       {/* {status &&  */}
-      <Modal status={status} toggleModal={toggleModal} />
+      {status && <Modal status={status} toggleModal={toggleModal} />}
       {/* } */}
     </>
   );
