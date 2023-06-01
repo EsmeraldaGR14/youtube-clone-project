@@ -20,6 +20,7 @@ function Home() {
    * Executes a side effect to fetch videos when the search query changes or when the component mounts.
    * If the search query is not empty, it calls the fetchVideos() function to perform the API request.
    */
+
   useEffect(() => {
     if (searchquery) {
       fetchVideos();
@@ -27,9 +28,11 @@ function Home() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+
   /**
    * Fetches videos from the API based on the search query and updates the state variables.
    */
+
   async function fetchVideos() {
     try {
       let result = await fetchApi({
@@ -78,7 +81,6 @@ function Home() {
     invalidSearch();
     fetchVideos();
     setSearchQuery("");
-    // setMessage(!message);
   }
   return (
     <>

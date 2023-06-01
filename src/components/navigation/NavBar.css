@@ -4,6 +4,7 @@
   background-color: red;
   color: white;
   margin: 20px;
+  height: 10.4vh;
 }
 
 .nav_bar h2 {
@@ -21,4 +22,13 @@
 .eachNav h3 {
   padding-top: 3px;
   text-align: end;
+}
+.logo {
+  height: 10vh;
+  width: 70%;
+}
+.nav_bar img {
+  width: 100%;
+  border: 1px solid red;
+  border-radius: 5px;
 }

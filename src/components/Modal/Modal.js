@@ -2,8 +2,6 @@ import React from "react";
 import "./Modal.css";
 
 function Modal({ status, toggleModal }) {
-  // const [modalStatus, setModalStatus] = useState(status)
-
   return (
     <>
       {status && (

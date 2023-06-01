@@ -23,3 +23,35 @@ a {
   border-radius: 3px;
   padding: 4px;
 }
+.picture {
+  height: 45vh;
+  width: 30%;
+  border-radius: 50%;
+  margin-bottom: 2rem;
+}
+.esme,
+.karma {
+  display: grid;
+  border: 3px solid black;
+  border-radius: 3px;
+  margin-bottom: 40px;
+  max-width: 70%;
+  border-color: rgb(218, 18, 18);
+}
+.bio h2 {
+  justify-self: center;
+}
+.description {
+  margin-bottom: 2rem;
+}
+.Esmeralda-bio,
+.Karma-bio {
+  padding: 10px;
+}
+.esme-github-link,
+.karma-github-link {
+  justify-self: center;
+}
+.bio {
+  padding-left: 23rem;
+}
